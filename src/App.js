@@ -25,7 +25,7 @@ const App = () => {
       <div className='row'>
         <Form addPerson={addPerson} />
         <People people={people} />
-        <NewPerson newPerson={people[people.length - 1]} />
+        <NewPerson newPerson={people[people.length - 1]} peopleCount={people.length} />
       </div>
     </div>
   );

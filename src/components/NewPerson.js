@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 
-const NewPerson = ({ newPerson }) => {
+import PeopleCount from './PeopleCount';
+
+const NewPerson = ({ newPerson, peopleCount }) => {
   useEffect(() => {
     const newPersonName = `${newPerson.firstName} ${newPerson.lastName}`;
     document.title = newPersonName;
@@ -11,9 +13,10 @@ const NewPerson = ({ newPerson }) => {
   }, [newPerson]);
   return (
     <div className='col col-sm-12'>
-      <div className='mt-4 text-center'>
+      <h2 className='mt-4 text-center'>
         Newest Person: {`${newPerson.firstName} ${newPerson.lastName}`}
-      </div>
+      </h2>
+      <PeopleCount peopleCount={peopleCount} />
     </div>
   );
 };

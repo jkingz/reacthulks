@@ -14,6 +14,6 @@ export default (state, action) => {
       return addPerson(action.payload, state);
 
     default:
-      state;
+      return state;
   }
 };

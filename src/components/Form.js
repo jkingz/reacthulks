@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
-const Form = props => {
+import peopleContext from '../context/peopleContext';
+
+const Form = () => {
   const [person, setPerson] = useState({ firstName: '', lastName: '' });
+  const context = useContext(peopleContext);
 
   const onChange = e => {
     setPerson({ ...person, [e.target.name]: e.target.value });
@@ -16,7 +19,7 @@ const Form = props => {
       lastName: person.lastName.trim(),
     };
 
-    props.addPerson(newPerson);
+    context.addPerson(newPerson);
     setPerson({ firstName: '', lastName: '' });
   };
 

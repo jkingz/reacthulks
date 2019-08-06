@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 
 import peopleContext from '../context/peopleContext';
 
@@ -22,6 +22,9 @@ const Form = () => {
     context.addPerson(newPerson);
     setPerson({ firstName: '', lastName: '' });
   };
+
+  const printNumberofPeople = () => console.log(`Number of people: ${context.people.length}`);
+  useMemo(() => printNumberofPeople(), []);
 
   return (
     <div className='col'>
